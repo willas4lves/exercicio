@@ -21,6 +21,8 @@ public class Lista01 {
         soma = num1 + num2;
 
         System.out.println("Resultado: " + soma);
+        
+        sc.close();
 
     }
 
