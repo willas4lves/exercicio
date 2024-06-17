@@ -115,7 +115,7 @@ public class Lista01 {
         System.out.print("Digite a temperatura em Fahrenheit: ");
         double fahrenheit = scanner.nextDouble();
 
-        double celsius = (fahrenheit - 32) * 5 / 9;
+        double celsius = (fahrenheit - 32) / 1.8;
 
         System.out.printf("A temperatura em Celsius é: %.2f%n", celsius);
 
