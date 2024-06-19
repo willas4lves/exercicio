@@ -101,7 +101,37 @@ public class Lista02 {
     }
 
     void ex06(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite a nota da primeira prova: ");
+        double nota1 = scanner.nextDouble();
+        System.out.print("Digite a nota da segunda prova: ");
+        double nota2 = scanner.nextDouble();
+        double notaRecuperacao = 0;
 
+        double media = (nota1 + nota2) / 2;
+
+        if (media >= 6) {
+            System.out.println("Aluno aprovado com média: " + media);
+        } else {
+            System.out.println("Aluno em recuperação. Média atual: " + media);
+        }
+
+
+            if (media < 6) {
+                System.out.print("Digite a nota da prova de recuperação: ");
+                notaRecuperacao = scanner.nextDouble();
+                nota1 = notaRecuperacao;
+                if (nota1 > 6) {
+                    System.out.println("aprovado");
+                    
+                }
+            } else { 
+                System.out.println("Aluno reprovado com média: " + media);
+            }
+            
+
+           
+            scanner.close();
     }
 
     void ex07(){
@@ -116,9 +146,49 @@ public class Lista02 {
         } else{
             System.out.println("O número " + numero + " não é divisível por " + x);
         }
+        scanner.close();
     }
 
     void ex08(){
+        Scanner scanner = new Scanner(System.in);
+        int erros = 0;
+        int acertos = 0;
+
         
+        String[][] perguntas = {
+            {"Quantos Arcos Berserk tem?", "a) 5", "b) 3", "c) 8", "d) 3", "a"},
+            {"O que Vinland Saga nos ensina?", "a) aprender a ser violento", "b) ser solitario", "c) Você não tem inimigos", "d) ser uma pessoa gananciosa", "c"},
+            {"Quem foi Thorfinn na vida real?", "a) cozinheiro", "b) viking", "c) explorador", "d) ladrão", "c"},
+            {"Quem foi Miyamoto Musashi na vida real?", "a) fuzileiro", "b) politico", "c) samurai", "d) ninja", "c"},
+            {"O que significa samurai na Bíblia?", "a) aquele que fico so", "b) aquele que serve ao senhor", "c) aquele que esta triste", "d) aquele que morre lutando", "b"}
+        };
+
+        for (int i = 0; i < perguntas.length; i++) {
+            System.out.println(perguntas[i][0]);
+            for (int j = 1; j <= 4; j++) {
+                System.out.println(perguntas[i][j]);
+            }
+
+            System.out.print("Digite a sua resposta: ");
+            String resposta = scanner.next();
+
+            if (resposta.equalsIgnoreCase(perguntas[i][5])) {
+                acertos++;
+                System.out.println("Resposta correta!\n");
+            } else {
+                erros++;
+                System.out.println("Resposta incorreta.\n");
+                if (erros == 3) {
+                    System.out.println("Você errou 3 vezes. Fim de jogo.");
+                    break;
+                }
+            }
+        }
+
+        if (erros < 3) {
+            System.out.println("Parabéns! Você completou o jogo.");
+        }
+
+        System.out.println("Número de acertos: " + acertos);
     }
 }

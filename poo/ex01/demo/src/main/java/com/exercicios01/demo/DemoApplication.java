@@ -11,7 +11,7 @@ public class DemoApplication {
 		Lista01 lista01 = new Lista01();
 		Lista02 lista02 = new Lista02();
 
-        lista02.ex07();
+        lista02.ex01();
 		
 	}
 
