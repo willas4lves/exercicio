@@ -42,12 +42,16 @@ public class Lista02 {
         int idade = scanner.nextInt();
 
         System.out.println("Você é deficiente (sim/não)? ");
-        boolean deficiente = scanner.nextBoolean();
+        String deficiente = scanner.next();
 
         System.out.print("Você é gestante (sim/nao)? ");
-        boolean gestante = scanner.nextBoolean();
+        String gestante = scanner.next();
 
-        if (idade > 65 || deficiente || gestante) {
+        boolean filapreferencial = false;
+
+        if (idade > 65 || deficiente.equalsIgnoreCase("sim") || gestante.equalsIgnoreCase("sim")) {
+            filapreferencial = true;
+
             System.out.println("Você deve ser encaminhado para a fila preferencial.");
         } else {
             System.out.println("Você deve ser encaminhado para a fila comum.");
@@ -102,36 +106,34 @@ public class Lista02 {
 
     void ex06(){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Digite a nota da primeira prova: ");
+        System.out.print("Digite a primeira nota: ");
         double nota1 = scanner.nextDouble();
-        System.out.print("Digite a nota da segunda prova: ");
-        double nota2 = scanner.nextDouble();
-        double notaRecuperacao = 0;
+        System.out.print("Digite a segunda nota: ");
 
+        double nota2 = scanner.nextDouble();
+        
         double media = (nota1 + nota2) / 2;
 
         if (media >= 6) {
-            System.out.println("Aluno aprovado com média: " + media);
+            System.out.println("Aluno aprovado com média " + media);
         } else {
-            System.out.println("Aluno em recuperação. Média atual: " + media);
-        }
+            System.out.print("Digite a nota de recuperação: ");
+            double notaRecuperacao = scanner.nextDouble();
 
-
-            if (media < 6) {
-                System.out.print("Digite a nota da prova de recuperação: ");
-                notaRecuperacao = scanner.nextDouble();
+            if (nota1 < nota2) {
                 nota1 = notaRecuperacao;
-                if (nota1 > 6) {
-                    System.out.println("aprovado");
-                    
-                }
-            } else { 
-                System.out.println("Aluno reprovado com média: " + media);
+            } else {
+                nota2 = notaRecuperacao;
             }
-            
+            media = (nota1 + nota2) / 2;
 
-           
-            scanner.close();
+            if (media >= 6) {
+                System.out.println("Aluno aprovado após recuperação com média " + media);
+            } else {
+                System.out.println("Aluno reprovado com média " + media);
+            }
+        }
+        scanner.close();
     }
 
     void ex07(){
