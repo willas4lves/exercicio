@@ -10,8 +10,9 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 		Lista01 lista01 = new Lista01();
 		Lista02 lista02 = new Lista02();
+		Lista03 lista03 = new Lista03();
 
-        lista02.ex01();
+        lista03.ex01();
 		
 	}
 

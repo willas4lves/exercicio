@@ -190,5 +190,6 @@ public class Lista02 {
         }
 
         System.out.println("Número de acertos: " + acertos);
+        scanner.close();
     }
 }
