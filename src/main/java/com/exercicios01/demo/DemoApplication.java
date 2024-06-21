@@ -12,7 +12,7 @@ public class DemoApplication {
 		Lista02 lista02 = new Lista02();
 		Lista03 lista03 = new Lista03();
 
-        lista03.ex01();
+        lista02.ex01();
 		
 	}
 
