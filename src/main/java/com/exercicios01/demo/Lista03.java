@@ -137,9 +137,9 @@ public class Lista03 {
     }
 
     public void ex06(){
-        Scanner scanner = new Scanner(System.in);
+        Scanner piramide = new Scanner(System.in);
         System.out.print("Digite o número de andares da pirâmide: ");
-        int andares = scanner.nextInt();
+        int andares = piramide.nextInt();
 
         for (int o = 1; o <= andares; o++) {
             for (int l = 0; l < andares - o; l++) {
@@ -151,7 +151,7 @@ public class Lista03 {
             System.out.println();
             
         }
-        scanner.close();
+        piramide.close();
     }
 
     public void ex07(){
