@@ -13,7 +13,7 @@ public class DemoApplication {
 		Lista03 lista03 = new Lista03();
 		Lista04 lista04 = new Lista04();
 
-        lista04.ex05();
+        lista03.ex05();
 		
 	}
 
